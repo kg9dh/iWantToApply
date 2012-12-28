@@ -1,0 +1,40 @@
+name: iWantToApply
+version: 0.1
+main: ch.kg9dh.main.Main
+commands:
+  apply:
+    description: Starts application process.
+    usage: /<command>
+  age:
+    description: Sets your age.
+    usage: /<command> <your age>
+  gender:
+    description: Sets your gender.
+    usage: /<command> <male/female>
+  irl:
+    description: Sets your 'real-life' name.
+    usage: /<command> <name>
+  whyme:
+    description: Give a reason why you should be accepted.
+    usage: /<command> <text>
+  moredesc:
+    description: Add more to this reason.
+    usage: /<command> <text>
+  done:
+    description: Use this command when you are done with your application.
+    usage: /<command> 
+  checkstatus:
+    description: Check your application status.
+    usage: /<command> 
+  checkapps:
+    description: Check open applications.
+    usage: /<command>
+  check:
+    description: Check a certain app.
+    usage: /<command> <player>
+  accept:
+    description: Accept an application.
+    usage: /<command> <player>
+  reject:
+    description: Reject an application.
+    usage: /<command> <player>

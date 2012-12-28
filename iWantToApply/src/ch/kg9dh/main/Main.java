@@ -7,6 +7,7 @@ import java.util.Map;
 import java.util.logging.Logger;
 
 import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
@@ -17,6 +18,8 @@ public class Main extends JavaPlugin{
 	/**TODO:
 	 * Make Colors configurable
 	 * add Groupmanager 
+	 * better tutorial
+	 * playerlist in config --> change so it checks from there if should load
 	 * something needs to be done I forgot atm
 	 * */
 	
@@ -32,12 +35,15 @@ public class Main extends JavaPlugin{
 	
 	public List<Player>APPS = new ArrayList<Player>(); 					//stores all apps
 	
+	public ChatColor color_text = ChatColor.valueOf(this.getConfig().getString("DisplayColorText"));
+	public ChatColor color_var = ChatColor.valueOf(this.getConfig().getString("DisplayColorVariables")); 
+	
  	@Override
 	public void onEnable() {
  		
         this.saveDefaultConfig();
         
-        APPS = (List<Player>) this.getConfig().getList("PlayerAps");
+        APPS = (List<Player>) this.getConfig().getList("PlayerApps");
         
         for(Player startup : APPS){
         	getLog(startup);
