@@ -6,11 +6,14 @@ import java.util.List;
 import java.util.Map;
 import java.util.logging.Logger;
 
+import org.anjocaido.groupmanager.GroupManager;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+import org.bukkit.plugin.Plugin;
+import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class Main extends JavaPlugin{
@@ -38,6 +41,9 @@ public class Main extends JavaPlugin{
 	public ChatColor color_text = ChatColor.valueOf(this.getConfig().getString("DisplayColorText"));
 	public ChatColor color_var = ChatColor.valueOf(this.getConfig().getString("DisplayColorVariables")); 
 	
+	private GMHook gm;
+	
+	
  	@Override
 	public void onEnable() {
  		
@@ -50,6 +56,7 @@ public class Main extends JavaPlugin{
         }
         
  		log.info("Plugin Enabled!");
+
  	}
 	
  	@Override
@@ -249,6 +256,7 @@ public class Main extends JavaPlugin{
 		 				STATUS.put(statusplayer, true);
 		 				APPS.remove(statusplayer);
 		 				HANDLER.put(statusplayer, p.toString());
+		 				gm.setGroup(statusplayer, this.getConfig().getString("GroupToPromote"));
 	 				}
 	 			}else if(args.length==0){
 	 				p.sendMessage("Please add an argument. The command is '/accept <player>'.");
@@ -336,5 +344,6 @@ public class Main extends JavaPlugin{
  	 * 
  	 * also i'd like the plugin to auto promote the applier after his app was accepted.
  	 * */
+	
  	
 }
