@@ -6,7 +6,7 @@
 ####################################
 #PLAYERS IN APPMODE - DO NOT ALTER!#
 ####################################
-PlayerApps:
+PlayerApps: kg9dh
 #
 #
 #
@@ -29,3 +29,10 @@ DisplayColorVariables: DARK_AQUA
 #
 #
 #
+kg9dh: 
+  status: accepted
+  age: 19
+  gender: 0
+  name: philipp
+  reason: because I made the plugin
+  handler: elmo114

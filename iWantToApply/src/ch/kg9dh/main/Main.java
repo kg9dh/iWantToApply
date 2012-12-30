@@ -25,9 +25,7 @@ public class Main extends JavaPlugin{
 	 * playerlist in config --> change so it checks from there if should load
 	 * something needs to be done I forgot atm
 	 * */
-	
-	Logger log = this.getLogger();
-	
+		
 	public Map<Player, Boolean>APPLY = new HashMap<Player, Boolean>();	//Is the player in apply-mode?
 	public Map<Player, Boolean>STATUS = new HashMap<Player, Boolean>();  //rejected or accepted?
 	public Map<Player, Integer>AGE = new HashMap<Player, Integer>();	//stores player age
@@ -38,10 +36,10 @@ public class Main extends JavaPlugin{
 	
 	public List<Player>APPS = new ArrayList<Player>(); 					//stores all apps
 	
-	public ChatColor color_text = ChatColor.valueOf(this.getConfig().getString("DisplayColorText"));
-	public ChatColor color_var = ChatColor.valueOf(this.getConfig().getString("DisplayColorVariables")); 
+	public ChatColor color_text;
+	public ChatColor color_var;
 	
-	private GMHook gm;
+	//private GMHook gm;
 	
 	
  	@Override
@@ -49,14 +47,17 @@ public class Main extends JavaPlugin{
  		
         this.saveDefaultConfig();
         
+        try{
         APPS = (List<Player>) this.getConfig().getList("PlayerApps");
+        color_text = ChatColor.valueOf(this.getConfig().getString("DisplayColorText"));
+        color_var = ChatColor.valueOf(this.getConfig().getString("DisplayColorVariables")); 
+        }catch(Exception e){System.out.println("APPS IS FUCKED");}
         
+        try{
         for(Player startup : APPS){
         	getLog(startup);
-        }
-        
- 		log.info("Plugin Enabled!");
-
+        }}catch(Exception e){System.out.println("STARTUP IS FUCKED");}
+                
  	}
 	
  	@Override
@@ -75,9 +76,6 @@ public class Main extends JavaPlugin{
  		IRL.clear();
  		WHYME.clear();
  		HANDLER.clear();
- 		
- 		log.info("Plugin Disabled!");
- 		
 	}
  	
  	@Override
@@ -256,7 +254,7 @@ public class Main extends JavaPlugin{
 		 				STATUS.put(statusplayer, true);
 		 				APPS.remove(statusplayer);
 		 				HANDLER.put(statusplayer, p.toString());
-		 				gm.setGroup(statusplayer, this.getConfig().getString("GroupToPromote"));
+		 				//gm.setGroup(statusplayer, this.getConfig().getString("GroupToPromote"));
 	 				}
 	 			}else if(args.length==0){
 	 				p.sendMessage("Please add an argument. The command is '/accept <player>'.");
