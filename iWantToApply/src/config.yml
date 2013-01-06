@@ -1,0 +1,38 @@
+############################
+#Header: iWantToApplyPlugin#
+############################
+#
+#
+####################################
+#PLAYERS IN APPMODE - DO NOT ALTER!#
+####################################
+PlayerApps: kg9dh
+#
+#
+#
+###################################
+#THE EXACT GROUPNAME TO PROMOTE TO#
+###################################
+GroupToPromote: 
+#
+#
+#
+############################################################################################################################################
+#BLACK, DARK_BLUE, DARK_GREEN, DARK_AQUA, DARK_RED, DARK_PURPLE, GOLD, GRAY, DARK_GRAY, BLUE, GREEN, AQUA, RED, LIGHT_PURPLE, YELLOW, WHITE#
+############################################################################################################################################
+DisplayColorText: GOLD
+DisplayColorVariables: DARK_AQUA
+#
+#
+#
+#ALL THE APPS FOLLOW HERE:
+#
+#
+#
+kg9dh: 
+  status: accepted
+  age: 19
+  gender: 0
+  name: philipp
+  reason: because I made the plugin
+  handler: elmo114
